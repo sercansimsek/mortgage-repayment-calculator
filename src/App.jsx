@@ -1,3 +1,6 @@
+import calculatorImg from './assets/images/icon-calculator.svg';
+import footerImg from './assets/images/illustration-empty.svg';
+
 export const App = () => {
   return (
     <div>
@@ -12,8 +15,8 @@ export const App = () => {
         <div className="flex flex-col gap-6">
           <dsiv className="flex flex-col gap-2">
             <h3>Mortgagae Amount</h3>
-            <div className="flex items-center border-2 border-slate300 rounded-md overflow-hidden focus-within:border-lime transition">
-              <span className="bg-slate100 px-4 py-3 text-slate700 font-bold text-lg">
+            <div className="group flex items-center border-2 border-slate300 rounded-md overflow-hidden focus-within:border-lime transition">
+              <span className="bg-slate100 px-4 py-3 text-slate700 font-bold text-lg transition group-focus-within:bg-lime group-focus-within:text-slate900">
                 £
               </span>
               <input
@@ -27,13 +30,13 @@ export const App = () => {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <h3>Mortgage Term</h3>
-              <div className="flex items-center border-2 border-slate300 rounded-md overflow-hidden focus-within:border-lime transition">
+              <div className="group flex items-center border-2 border-slate300 rounded-md overflow-hidden focus-within:border-lime transition">
                 <input
                   type="number"
                   placeholder="0"
                   className="flex-1 min-w-0 px-4 py-3 outline-none text-slate900 font-bold text-lg placeholder-slate300"
                 />
-                <span className="bg-slate100 px-4 py-3 text-slate700 font-bold text-lg flex-shrink-0">
+                <span className="bg-slate100 px-4 py-3 text-slate700 font-bold text-lg flex-shrink-0 transition group-focus-within:bg-lime group-focus-within:text-slate900">
                   years
                 </span>
               </div>
@@ -41,13 +44,13 @@ export const App = () => {
 
             <div className="flex flex-col gap-2">
               <h3>Interest Rate</h3>
-              <div className="flex items-center border-2 border-slate300 rounded-md overflow-hidden focus-within:border-lime transition">
+              <div className="group flex items-center border-2 border-slate300 rounded-md overflow-hidden focus-within:border-lime transition">
                 <input
                   type="number"
                   placeholder="0"
                   className="flex-1 px-4 py-3 outline-none text-slate900 font-bold text-lg placeholder-slate300"
                 />
-                <span className="bg-slate100 px-4 py-3 text-slate700 font-bold text-lg">
+                <span className="bg-slate100 px-4 py-3 text-slate700 font-bold text-lg transition group-focus-within:bg-lime group-focus-within:text-slate900">
                   %
                 </span>
               </div>
@@ -74,7 +77,19 @@ export const App = () => {
               </label>
             </div>
           </div>
+
+          <button className='flex gap-3 items-center justify-center rounded-4xl border-lime p-4 bg-lime cursor-pointer hover:bg-lime/45'>
+            <img src={calculatorImg} alt="calculator" />
+            <span className='text-slate900 font-bold'>Calculate Repayments</span>
+          </button>
         </div>
+      <footer>
+        <div className='flex flex-col justify-center items-center'>
+          <img src={footerImg} alt="empty icon" />
+          <h3>Results shown here</h3>
+          <p className='text-center'>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+        </div>
+      </footer>
       </div>
     </div>
   );
