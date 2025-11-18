@@ -3,11 +3,13 @@ import footerImg from "./assets/images/illustration-empty.svg";
 
 export const App = () => {
   return (
-    <div className="bg-slate300/35">
-      <div className="w-[375px] flex flex-col mx-auto">
-        <div className=" py-8 px-6 font-Jakarta bg-white">
-          <div className="flex flex-col gap-2 mb-6">
-            <span className="text-slate900 text-2xl font-medium">Mortgage Calculator</span>
+    <div className="bg-slate300/35 font-Jakarta">
+      <div className="w-[375px] flex flex-col mx-auto md:w-[768px] md:p-10 ">
+        <div className=" py-8 px-6 bg-white md:rounded-t-2xl">
+          <div className="flex flex-col gap-2 mb-6 md:flex-row md:justify-between md:items-center">
+            <span className="text-slate900 text-2xl font-medium">
+              Mortgage Calculator
+            </span>
             <button
               type="button"
               className="underline text-left cursor-pointer text-slate700"
@@ -35,8 +37,8 @@ export const App = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-6 md:flex-row">
+              <div className="flex flex-1 flex-col gap-2 min-w-0">
                 <h3>Mortgage Term</h3>
                 <div className="group flex items-center border-2 border-slate300 rounded-md overflow-hidden focus-within:border-lime transition">
                   <input
@@ -54,14 +56,14 @@ export const App = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-1 flex-col gap-2 min-w-0">
                 <h3>Interest Rate</h3>
                 <div className="group flex items-center border-2 border-slate300 rounded-md overflow-hidden focus-within:border-lime transition">
                   <input
                     id="rate"
                     type="number"
                     placeholder="0"
-                    className="flex-1 px-4 py-3 outline-none text-slate900 font-bold text-lg placeholder-slate300"
+                    className="flex-1 min-w-0 px-4 py-3 outline-none text-slate900 font-bold text-lg placeholder-slate300"
                   />
                   <label
                     className="bg-slate100 px-4 py-3 text-slate700 font-bold text-lg transition group-focus-within:bg-lime group-focus-within:text-slate900"
@@ -102,7 +104,7 @@ export const App = () => {
               </div>
             </div>
 
-            <button className="flex gap-3 items-center justify-center rounded-4xl border-lime p-4 bg-lime cursor-pointer hover:bg-lime/45">
+            <button className="flex gap-3 items-center justify-center rounded-4xl border-lime p-4 bg-lime cursor-pointer hover:bg-lime/45 md:w-1/2">
               <img src={calculatorImg} alt="calculator" />
               <span className="text-slate900 font-bold">
                 Calculate Repayments
@@ -110,12 +112,12 @@ export const App = () => {
             </button>
           </div>
         </div>
-        <footer className="bg-slate900 px-6 py-8">
+        <footer className="bg-slate900 px-6 py-8 md:rounded-b-2xl">
           <div className="flex flex-col justify-center items-center gap-4">
             <img
               src={footerImg}
               alt="empty icon"
-              className="h-[192px] w-[192px]"
+              className="h-[192px] w-[192px] "
             />
             <h3 className="text-white text-2xl font-semibold">
               Results shown here
